@@ -1,0 +1,33 @@
+.MainFooter{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 5%;
+    width: 100%;
+}
+
+.FooterIcon{
+    background-color: #319547;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    width: 85%;
+}
+
+.SezioneImpostata{
+    /* position: absolute; */
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    border: 1px solid black;
+    padding: 15px;
+    color: black;
+    margin-top: -60px;
+    margin-left: -20px;
+}
+
+.pointer:hover{
+    cursor: pointer;
+}
