@@ -1,62 +1,65 @@
-import React, { useState } from 'react'
-import './Footer.css'
-import { NavLink } from 'react-router-dom'
-//versione bianca
-import EmIconW from './Image/Emergenza.png'
-import QrIconW from './Image/Qr.png'
-import SiIconW from './Image/Sicurezza.png'
-//versione nera
-import EmIconB from './Image/Emergenza2.png'
-import QrIconB from './Image/Qr2.png'
-import SiIconB from './Image/Sicurezza2.png'
+import React, { useState, useEffect, useRef } from 'react';
+import './Footer.css';
+import { NavLink, useLocation } from 'react-router-dom';
+
+import EmIconW from './Image/Emergenza.png';
+import QrIconW from './Image/Qr.png';
+import SiIconW from './Image/Sicurezza.png';
+
+import EmIconB from './Image/Emergenza2.png';
+import QrIconB from './Image/Qr2.png';
+import SiIconB from './Image/Sicurezza2.png';
 
 const Footer = () => {
-    const [EmIcon, setEmIcon] = useState(EmIconW)
-    const [QrIcon, setQrIcon] = useState(QrIconW)
-    const [SiIcon, setSiIcon] = useState(SiIconW)
-    const [LastSaved, setLastSaved] = useState(null)
+    const [icone, setIcone] = useState({
+        em: EmIconW,
+        qr: QrIconW,
+        si: SiIconW,
+    });
 
-    const sezione =(cls)=>{
-        let icona = document.querySelector(cls)
-        icona.classList.add("SezioneImpostata")
+    // Posizione corrente ( hook useLocation() )
+    const location = useLocation();
 
-        if (cls === ".iem" && icona.classList.contains("SezioneImpostata")){
-            setEmIcon(EmIconB)
-            setQrIcon(QrIconW)
-            setSiIcon(SiIconW)
-        } else if (cls === ".iqr" && icona.classList.contains("SezioneImpostata")){
-            setEmIcon(EmIconW)
-            setQrIcon(QrIconB)
-            setSiIcon(SiIconW)
-        } else if (cls === ".isi" && icona.classList.contains("SezioneImpostata")){
-            setEmIcon(EmIconW)
-            setQrIcon(QrIconW)
-            setSiIcon(SiIconB)
+    const footerRef = useRef(null);
+
+    const sezione = (cls) => {
+        const nuoveIcone = {
+            em: cls === 'em' ? EmIconB : EmIconW,
+            qr: cls === 'qr' ? QrIconB : QrIconW,
+            si: cls === 'si' ? SiIconB : SiIconW,
+        };
+
+        setIcone(nuoveIcone);
+    };
+
+    useEffect(() => {
+        // Controllo dela posizione corrente per impostare l'icona
+        if (location.pathname === '/QrCode') {
+            sezione('qr');
+        } else if (location.pathname === '/Emergenza') {
+            sezione('em');
+        } else if (location.pathname === '/Sicurezza') {
+            sezione('si');
         }
-
-        if (LastSaved !== null)
-            LastSaved.classList.remove("SezioneImpostata")
-
-        setLastSaved(icona)
-    }
+    }, [location.pathname]);
 
     return (
-        <div className='MainFooter'>
+        <div className='MainFooter' ref={footerRef}>
             <div className='FooterIcon'>
-                <NavLink to={"/Emergenza"} onClick={()=>sezione(".iem")} className='iem'>
-                    <img src={EmIcon} alt="Icona Emergenza" className='pointer'/>
+                <NavLink to={"/Emergenza"} onClick={() => sezione('em')} className={icone.em === EmIconB ? 'em SezioneImpostata' : 'em'}>
+                    <img src={icone.em} alt="Icona Emergenza" className='pointer' />
                 </NavLink>
 
-                <NavLink to={"/QrCode"} onClick={()=>sezione(".iqr")} className='iqr'>
-                    <img src={QrIcon} alt="Icona Qr code" className='pointer'/>
+                <NavLink to={"/QrCode"} onClick={() => sezione('qr')} className={icone.qr === QrIconB ? 'qr SezioneImpostata' : 'qr'}>
+                    <img src={icone.qr} alt="Icona Qr code" className='pointer' />
                 </NavLink>
 
-                <NavLink to={"/Sicurezza"} onClick={()=>sezione(".isi")} className='isi'>
-                    <img src={SiIcon} alt="Iconda sicurezza" className='pointer'/>
+                <NavLink to={"/Sicurezza"} onClick={() => sezione('si')} className={icone.si === SiIconB ? 'si SezioneImpostata' : 'si'}>
+                    <img src={icone.si} alt="Icona sicurezza" className='pointer' />
                 </NavLink>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Footer
+export default Footer;

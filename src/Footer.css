@@ -5,6 +5,7 @@
     align-items: center;
     bottom: 5%;
     width: 100%;
+    z-index: 99!important;
 }
 
 .FooterIcon{
@@ -15,17 +16,17 @@
     align-items: center;
     padding: 20px;
     width: 85%;
+    height:60px;
 }
 
 .SezioneImpostata{
     /* position: absolute; */
     background-color: #FFFFFF;
     border-radius: 50%;
-    border: 1px solid black;
-    padding: 15px;
+    border: 2px solid black;
+    padding: 10px;
     color: black;
     margin-top: -60px;
-    margin-left: -20px;
 }
 
 .pointer:hover{

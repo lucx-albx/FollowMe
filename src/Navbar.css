@@ -1,10 +1,12 @@
 .MainNavbar{
     position: fixed;
-    /* display: flex;
-    justify-content: space-evenly;
-    align-items: center; */
-    width: 100%;
+    display: flex;
+    align-items: center!important;
+    width: 100%!important;
     height: 80px;
+    z-index: 99!important;
+    margin: 0;
+    background-color: #FFFFFF;
 }
 
 .mainWord{

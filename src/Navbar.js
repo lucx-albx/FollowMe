@@ -13,7 +13,6 @@ const Navbar = () => {
                     <span></span>
                 </label>
             </div>
-
             <NavLink to={"/"} style={{ textDecoration: 'none', color: '#319547' }} className='mainWord col-xl-7 col-lg-7 col-md-7 col-sm-7 col-6 d-flex align-items-center justify-content-center'>FollowMe</NavLink>
         </div>
     )
