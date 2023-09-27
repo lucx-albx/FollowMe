@@ -1,0 +1,74 @@
+.row-navbar{
+    margin-top:10px!important;
+}
+
+.MainNavbar {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%;
+    height: 60px;
+    z-index: 99;
+    margin: 0;
+    background-color: #FFFFFF;
+    border-radius: 100px;
+    padding: 0px 20px;
+    box-sizing: border-box;
+}
+
+.mainWord {
+    color: #319547;
+    font-size: 36px;
+    font-weight: bold;
+    cursor: pointer;
+    /* border: 1px solid red; */
+    text-align: center;
+    flex: 1;
+}
+
+.burger {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    cursor: pointer;
+    display: block;
+    /* border: 1px solid red; */
+    text-align: left;
+    margin-top:8px;
+}
+
+.burger input {
+    display: none;
+}
+  
+.burger span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: black;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+}
+  
+.burger span:nth-of-type(1) {
+    top: 0px;
+    transform-origin: left center;
+}
+  
+.burger span:nth-of-type(2) {
+    top: 50%;
+    transform: translateY(-50%);
+    transform-origin: left center;
+}
+  
+.burger span:nth-of-type(3) {
+    top: 100%;
+    transform-origin: left center;
+    transform: translateY(-100%);
+}
