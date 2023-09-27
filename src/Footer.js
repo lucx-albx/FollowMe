@@ -1,20 +1,18 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Footer.css';
 import { NavLink, useLocation } from 'react-router-dom';
-
-import EmIconW from './Image/Emergenza.png';
-import QrIconW from './Image/Qr.png';
-import SiIconW from './Image/Sicurezza.png';
-
-import EmIconB from './Image/Emergenza2.png';
-import QrIconB from './Image/Qr2.png';
-import SiIconB from './Image/Sicurezza2.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLocationArrow, faPhoneVolume, faQrcode } from '@fortawesome/free-solid-svg-icons'
 
 const Footer = () => {
+    const EmIcon = <FontAwesomeIcon icon={faPhoneVolume} className='pointer'/>
+    const QrIcon = <FontAwesomeIcon icon={faQrcode} className='pointer'/>
+    const SiIcon = <FontAwesomeIcon icon={faLocationArrow} className='pointer'/>
+
     const [icone, setIcone] = useState({
-        em: EmIconW,
-        qr: QrIconW,
-        si: SiIconW,
+        em: [EmIcon, "ns"],
+        qr: [QrIcon, "ns"],
+        si: [SiIcon, "ns"]
     });
 
     // Posizione corrente ( hook useLocation() )
@@ -24,9 +22,9 @@ const Footer = () => {
 
     const sezione = (cls) => {
         const nuoveIcone = {
-            em: cls === 'em' ? EmIconB : EmIconW,
-            qr: cls === 'qr' ? QrIconB : QrIconW,
-            si: cls === 'si' ? SiIconB : SiIconW,
+            em: cls === 'em' ? [EmIcon, "ns"] : [EmIcon, "ss"],
+            qr: cls === 'qr' ? [QrIcon, "ns"] : [QrIcon, "ss"],
+            si: cls === 'si' ? [SiIcon, "ns"] : [SiIcon, "ss"],
         };
 
         setIcone(nuoveIcone);
@@ -46,16 +44,16 @@ const Footer = () => {
     return (
         <div className='MainFooter' ref={footerRef}>
             <div className='FooterIcon'>
-                <NavLink to={"/Emergenza"} onClick={() => sezione('em')} className={icone.em === EmIconB ? 'em SezioneImpostata' : 'em'}>
-                    <img src={icone.em} alt="Icona Emergenza" className='pointer' />
+                <NavLink to={"/Emergenza"} onClick={()=>sezione('em')} style={{ textDecoration: 'none', color: '#319547' }} className={icone.em[1] === "ns" ? 'SezioneImpostata' : 'iconaStyle'}>
+                    {icone.em[0]}
                 </NavLink>
 
-                <NavLink to={"/QrCode"} onClick={() => sezione('qr')} className={icone.qr === QrIconB ? 'qr SezioneImpostata' : 'qr'}>
-                    <img src={icone.qr} alt="Icona Qr code" className='pointer' />
+                <NavLink to={"/QrCode"} onClick={()=>sezione('qr')} style={{ textDecoration: 'none', color: '#319547' }} className={icone.qr[1] === "ns" ? 'SezioneImpostata' : 'iconaStyle'}>
+                    {icone.qr[0]}
                 </NavLink>
 
-                <NavLink to={"/Sicurezza"} onClick={() => sezione('si')} className={icone.si === SiIconB ? 'si SezioneImpostata' : 'si'}>
-                    <img src={icone.si} alt="Icona sicurezza" className='pointer' />
+                <NavLink to={"/Sicurezza"} onClick={()=>sezione('si')} style={{ textDecoration: 'none', color: '#319547' }} className={icone.si[1] === "ns" ? 'SezioneImpostata' : 'iconaStyle'}>
+                    {icone.si[0]}
                 </NavLink>
             </div>
         </div>
