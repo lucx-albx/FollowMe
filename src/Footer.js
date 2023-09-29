@@ -10,9 +10,9 @@ const Footer = () => {
     const SiIcon = <FontAwesomeIcon icon={faLocationArrow} className='pointer'/>
 
     const [icone, setIcone] = useState({
-        em: [EmIcon, "ns"],
-        qr: [QrIcon, "ns"],
-        si: [SiIcon, "ns"]
+        em: [EmIcon, "ss"],
+        qr: [QrIcon, "ss"],
+        si: [SiIcon, "ss"]
     });
 
     // Posizione corrente ( hook useLocation() )

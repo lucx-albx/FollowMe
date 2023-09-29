@@ -1,8 +1,12 @@
 html, body{
   overflow-x: none!important;
-  background-color: #D9D9D9;
+  background-color: #B5B5B5;
 }
 
 .row{
   margin: 0!important;
+}
+
+.invisibile{
+  display: none!important;
 }

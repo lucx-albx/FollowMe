@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Home.css';
 import { NavLink } from 'react-router-dom';
 
@@ -10,7 +10,7 @@ const Home = () => {
       <NavLink to={"/QrCode"} style={{ textDecoration: 'none', color: '#319547' }}>
         <div className="BorderSos pulse">
           <div className='MainSos text-center'>
-            <p>QR</p> 
+            <p>SOS</p> 
             <p>Press</p> 
           </div>
         </div>

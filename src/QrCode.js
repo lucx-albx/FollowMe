@@ -29,7 +29,7 @@
 */
 
 import './QrCode.css'
-import React, { useEffect } from 'react';
+import React from 'react';
 import { QrReader } from 'react-qr-reader';
 
 const QrCode = () => {
@@ -44,7 +44,7 @@ const QrCode = () => {
       <div className="col-12 MainQrCode">
         <QrReader
           constraints = {{
-            facingMode: { exact: "environment" }
+              facingMode: { exact: "environment" }
           }}
           onResult={(result) => {
             if (!!result) {
