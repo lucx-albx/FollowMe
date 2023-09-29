@@ -1,0 +1,9 @@
+.MainQrCode{
+    height: 80vh;
+    display: flex;
+    justify-content: center!important;
+    align-items: center!important;
+    align-content: center!important;
+    place-items: center;
+    z-index: 1!important;
+}
