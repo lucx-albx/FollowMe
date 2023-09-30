@@ -1,0 +1,11 @@
+.MainQrCode{
+    height: 65vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center!important;
+    align-items: center!important;
+    align-content: center!important;
+    z-index: 1!important;
+    gap: 50px;
+    text-align: center;
+}
