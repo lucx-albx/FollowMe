@@ -1,0 +1,70 @@
+.slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+  
+.slider-container {
+    max-width: 80%;
+    margin: 0 auto;
+    position: absolute;
+    margin-top:12.5vh;
+    left: 10%;
+}
+
+/* .slick-dots li.slick-active button:before {
+    color:green !important;
+    font-size: 20px;
+} */
+
+.slick-dots {
+    cursor: default; /* Impedisce il cambiamento del cursore */
+}
+  
+/* .slick-prev:before, .slick-next:before {
+    color: black!important;
+} */
+  
+.slide-2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight:bold;
+    font-size:2vh;
+    height: 51vh;
+}
+
+.p-affollamento{
+    font-size:17px!important;
+    color:green!important;
+    text-decoration: underline!important;
+}
+
+.slide-1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight:bold;
+    font-size:2vh;
+    text-align: center;
+    height: 48vh; 
+}
+
+.imgUscita{
+    width: 60%;
+}
+
+.title-uscita{
+    font-size:25px!important;
+    color:black!important;
+    margin-top:10px;
+}
+
+.p-uscita{
+    font-size:15px!important;
+    color:rgba(0, 0, 0, 0.53)!important;
+    font-weight: lighter;
+}
