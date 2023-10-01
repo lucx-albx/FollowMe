@@ -1,0 +1,17 @@
+html, body{
+  /* overflow-x: none!important; */
+  background-color: #d9d9d9;
+  /* overflow: hidden!important; */
+}
+
+.row{
+  margin: 0!important;
+}
+
+.invisibile{
+  display: none!important;
+}
+
+.b{
+  border: 1px solid black;
+}
