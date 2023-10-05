@@ -1,0 +1,18 @@
+/* .setOverflowPermessi{
+  height: 100vh;
+  overflow-y: auto!important;
+} */
+
+.MainPerm{
+    display: flex;
+    justify-content: center!important;
+    align-items: center!important;
+    align-content: center!important;
+    place-items: center!important;
+    flex-direction: column!important;
+    margin-top:90px;
+    margin-bottom: 150px;
+    text-align: center;
+	width: 100%;
+	position: absolute
+}
