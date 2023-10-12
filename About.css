@@ -1,0 +1,115 @@
+/* #37517e */
+.container-member{
+    padding: 20px;
+    /* margin-top: 80px!important; */
+    margin-bottom: 200px!important;
+    position: relative;
+    bottom: -80px!important;
+    width:100%;
+}
+
+.card-info img{
+    width:75px;
+    height:75px;
+}
+
+.mb-user{
+    margin-bottom: 1rem;
+}
+
+.tg-mr{
+    margin-top: -40px;
+}
+
+/* ===== CARD MEMBRI CLASSE ===== */
+
+.card-contributor {
+    border-radius: 5px;
+    width: 200px;
+    height: 280px;
+    background: white;
+    padding: 2rem 1.5rem;
+    transition: box-shadow .3s ease, transform .2s ease;
+    margin-bottom:25px;
+}
+   
+.card-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform .2s ease, opacity .2s ease;
+}
+   
+/*Image*/
+.card-avatar {
+    --size: 60px;
+    background: linear-gradient(to top, #f1e1c1 0%, #fcbc97 100%);
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    transition: transform .2s ease;
+    margin-bottom: 1rem;
+}
+   
+   
+/*Card footer*/
+.card-social {
+    transform: translateY(200%);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    opacity: 0;
+    transition: transform .2s ease, opacity .2s ease;
+}
+
+   
+.card-social__item .svg-img-contributor {
+    display: block;
+    height: 18px;
+    fill: #515F65;
+    cursor: pointer;
+    transition: fill 0.2s ease ,transform 0.2s ease;
+}
+   
+/*Text*/
+.card-title {
+    color: #333;
+    font-size: 1em;
+    font-weight: 600;
+    line-height: 2rem;
+}
+   
+.card-subtitle {
+    color: #859ba8;
+    font-size: 0.8em;
+}
+   
+/*Hover*/
+.card-contributor:hover {
+    box-shadow: 0 8px 50px #23232333;
+}
+   
+.card-contributor:hover .card-info {
+    transform: translateY(-5%);
+}
+   
+.card-contributor:hover .card-social {
+    transform: translateY(100%);
+    opacity: 1;
+}
+   
+.card-social__item .svg-img-contributor:hover {
+    fill: #232323;
+    transform: scale(1.1);
+}
+   
+.card-avatar:hover {
+    transform: scale(1.1);
+}
+
+.tx-al{
+    text-align: center;
+}
+
+/* ===== CARD MEMBRI CLASSE ===== */
