@@ -1,0 +1,75 @@
+.mt-6{
+    margin-top: 110px;
+    font-size: 17px;
+    font-weight: bold;
+    position: absolute;
+    width: 100%;
+}
+
+.centra{
+    display: flex;
+    justify-content: center;
+	flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.MainRotte{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.dati-partenza, .dati-arrivo{
+    background-color: #cacaca;
+    border-radius: 25px;
+    border: none;
+    padding: 15px!important;
+    height: 50px;
+    width: 80%;
+    color: black;
+    
+}
+
+.btn-start{
+    width: 100px;
+    height: 100px;
+    font-size: 20px;
+    color: white;
+    background-color: #319547;
+    border-radius: 50%;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+}
+
+.btn-start:hover{
+    cursor: pointer;
+}
+
+/*  */
+
+@keyframes pulse-green-avvia {
+    0% {
+      transform: scale(0.8);
+      box-shadow: 0 0 0 0 #319547;
+    }
+    50% {
+      transform: scale(1);
+      box-shadow: 0 0 0 20px rgba(0, 128, 0, 0);
+    }
+    100% {
+      transform: scale(0.8);
+      box-shadow: 0 0 0 0 rgba(0, 128, 0, 0);
+    }
+}
+  
+  
+.pulse-green-avvia {
+    animation: pulse-green-avvia 1.5s infinite;
+}
+  
