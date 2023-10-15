@@ -2,9 +2,10 @@ import React, { useContext, useEffect, useState } from 'react'
 import './Impostazioni.css'
 import CustomSwitch from './CustomSwitch'
 import "flag-icons"
-import {MdKeyboardArrowRight} from "react-icons/md"
+import { MdKeyboardArrowRight } from "react-icons/md"
 import { Box, Modal } from '@mui/material'
-import { language } from "./App";
+import { language } from "./App"
+
 
 const style = {
     position: 'absolute',
@@ -13,14 +14,14 @@ const style = {
     transform: 'translate(-50%, -50%)',
     width: 400,
     bgcolor: 'background.paper',
-    boxShadow: '3px 3px 25px 10px #BFBFBF',
+    // boxShadow: '3px 3px 25px 10px #BFBFBF',
     p: 4,
     height: "90%",
     borderRadius: 4,
     overflowY: "auto",
     display: "block",
     width: "85%"
-  };
+}
 
 const Impostazioni = () => {
 
@@ -603,10 +604,9 @@ const Impostazioni = () => {
         let f = localStorage.getItem("followmeLang")
 
         if(f == null || f == undefined || possibleLanguage.indexOf(f) == undefined){
-            setFlag("italian");
-
-        }else{
-            setFlag(f);
+            setFlag("italian")
+        } else {
+            setFlag(f)
         }
     }, [])
 
@@ -720,6 +720,7 @@ const Impostazioni = () => {
                         <CustomSwitch text={"Animazioni: "} onClick={sceltaAnimazione} className={"Animazioni"}/>
                     </div>
                 </div>
+
                 <div className='row justify-content-center align-items-center'>
                     <div className='box-elem col-11 mt-3' style={{height: "84px"}}>
                         <div className='row align-items-center w-100' onClick={langClicked} >
