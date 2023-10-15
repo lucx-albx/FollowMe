@@ -1,0 +1,46 @@
+html, body{
+  overflow-x: none!important;
+  background-color: #d9d9d9;
+  overflow-x: hidden!important;
+}
+
+.row{
+  margin: 0!important;
+}
+
+.invisibile{
+  display: none!important;
+}
+
+.b{
+  border: 1px solid black;
+}
+
+/* per chrome */
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: transparent
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #319547;
+  border-radius: 15px;
+}
+
+::-webkit-scrollbar-corner{
+  border-radius: 10px;
+  background-color: #319547;
+}
+/* per chrome */
+
+/* html {
+  transform: rotate(-90deg);
+  transform-origin: left top;
+  width: 100vh;
+  height: 100vw;
+  overflow-x: hidden;
+  position: absolute;
+  top: 100%;
+  left: 0;
+} 
+*/
