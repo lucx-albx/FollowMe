@@ -17,6 +17,7 @@ const Percorso = () => {
     const [maxReached, setMaxReached] = useState(false)
     const urlUscite = process.env.REACT_APP_URL_USCITE
     const urlIngressi = process.env.REACT_APP_URL_ENTRATE
+    const urlAulaAula = process.env.REACT_APP_URL_AULE
 
     useEffect(() => {
         caricaPercorso()
@@ -26,14 +27,16 @@ const Percorso = () => {
 		let datPart = partenza
 		let datArr = arrivo
         let mainPer = document.querySelector(".MainPercorso")
-        let load = document.querySelector(".dot-spinner")
+        let load = document.querySelector(".loader-percorsi")
 		let url = ""
 
         if(datPart === "ingresso"){
             url = urlIngressi
-        } else if(datArr === "uscita"){
+        } else if(datArr === "ingresso"){
             url = urlUscite
-        } 
+        } else if(datPart === "aula" && datArr === "aula"){
+            url = urlAulaAula
+        }
 
         load.classList.remove("invisibile")
         mainPer.classList.add("invisibile")

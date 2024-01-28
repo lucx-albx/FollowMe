@@ -3,7 +3,7 @@ import './Loader.css'
 
 const Loader = () => {
     return (
-        <div className="dot-spinner invisibile">
+        <div className="loader-percorsi dot-spinner invisibile">
             <div className="dot-spinner__dot"></div>
             <div className="dot-spinner__dot"></div>
             <div className="dot-spinner__dot"></div>

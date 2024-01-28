@@ -69,7 +69,7 @@ const Sicurezza = () => {
 			altreClassi.sort()
 	  
 			//Unisco le classi numeriche e le altre classi
-			let tutteLeClassi = ["Ingresso", "Uscita", ...classiNumeri, ...altreClassi]
+			let tutteLeClassi = ["Ingresso", ...classiNumeri, ...altreClassi]
 	  
 			//Creo le opzioni per la select
 			tutteLeClassi.forEach((classe) => {
@@ -126,23 +126,26 @@ const Sicurezza = () => {
 			"arrivo": datArr
 		})
 
-		if(datPart === "Ingresso" && datArr === "Uscita" || datPart === "Uscita" && datArr === "Ingresso"){
-			Toast.fire({icon: 'warning', title: 'Non è possibile andare da ingresso ad uscita oppure da uscita ad ingresso'})
-		} else if(/^\d/.test(datPart) && datArr === "Ingresso"){
-			Toast.fire({icon: 'warning', title: 'Non è possibile partire da aula e arrivare ad ingresso'})
-		} else if(datPart === "Ingresso" && datArr === "Ingresso" || datPart === "Uscita" && datArr === "Uscita"){
-			Toast.fire({icon: 'warning', title: 'Non è possibile andare da ingresso ad ingresso oppure da uscita ad uscita'})
+		//!questo test /^\d/.test(datPart) controlla se la stringa inizia per un numero
+		if(datPart === "Ingresso" && datArr === "Ingresso"){
+			Toast.fire({icon: 'warning', title: 'Non è possibile andare da ingresso ad ingresso'})
 		} else if(/^\d/.test(datPart) && /^\d/.test(datArr)){
 			Toast.fire({icon: 'warning', title: 'Al momento non puoi andare da aula ad aula'})
-		} else if(datPart === "Uscita" && /^\d/.test(datArr)){
-			Toast.fire({icon: 'warning', title: 'Al momento non è possibile andare da uscita e arrivare ad aula'})
-		} else if(!/^\d/.test(datPart) && datPart !== "Ingresso" && datArr !== "Uscita"){
-			if(!/^\d/.test(datPart) === !/^\d/.test(datPart)){
-				Toast.fire({icon: 'warning', title: 'Non puoi andare in due stanza uguali oppure da segreteria/laboratorio... non puoi andare ad ingresso o partire da uscita'})
+		} else if(!/^\d/.test(datPart) && datPart !== "Ingresso" && datArr !== "Ingresso"){
+			if(!/^\d/.test(datPart) === !/^\d/.test(datArr)){
+				Toast.fire({icon: 'warning', title: 'Non puoi andare in due stanza uguali oppure da segreteria/laboratorio...'})
 			}
 		} else {
 			frecciaTornaIndietro.remove("invisibile")
 			navigate("/Percorso")
+
+			//!Al momento questo controllo è inutile ma servirà quando ci saranno i json da aula ad aula
+			if(/^\d/.test(datPart) && /^\d/.test(datArr)){
+				impostaVar[0].setNewVar({
+					"partenza": 'aula',
+					"arrivo": 'aula'
+				})
+			}
 		}	
 	}
 	

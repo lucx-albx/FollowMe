@@ -33,214 +33,219 @@ const Impostazioni = () => {
     // const selectedIndex = possibleLanguage.findIndex(lang => lang.nome === f);
     const [possibleLanguage, setPossibleLanguage] = useState([
         {
-            "id": "Italiano",
+            "id": "italian",
             "nome": "Italiano",
             "code": "it"
         },
         {
-            "id": "English",
+            "id": "english",
             "nome": "English",
-            "code": "gb"
+            "code": "gb-eng"
         },
         {
-            "id": "Albanian",
-            "nome": "Albanian",
+            "id": "albanian",
+            "nome": "albanian",
             "code": "al"
         },
         {
-            "id": "Arabic",
+            "id": "arabic",
             "nome": "بالعربية",
             "code": "ae"
         },
         {
-            "id": "Armenian",
+            "id": "armenian",
             "nome": "հայերեն",
             "code": "am"
         },
         {
-            "id": "Bosnian",
-            "nome": "Bosanski",
+            "id": "bosnian",
+            "nome": "bosanski",
             "code": "ba"
         },
         {
-            "id": "Bengali",
+            "id": "bengali",
             "nome": "বাংলা",
             "code": "bd"
         },
         {
-            "id": "Bulgarian",
+            "id": "bulgarian",
             "nome": "български",
             "code": "bg"
         },
         {
-            "id": "Chinese simplified",
+            "id": "chinese_simplified",
             "nome": "简体中文",
             "code": "cn"
         },
         {
-            "id": "Chinese traditional",
+            "id": "chinese_traditional",
             "nome": "繁體中文",
             "code": "cn"
         },
         {
-            "id": "Croatian",
+            "id": "croatian",
             "nome": "Hrvatski",
             "code": "hr"
         },
         {
-            "id": "Danish",
-            "nome": "Dansk",
+            "id": "danish",
+            "nome": "dansk",
             "code": "dk"
         },
         {
-            "id": "Dutch",
+            "id": "dutch",
             "nome": "Nederlands",
             "code": "nl"
         },
         {
-            "id": "Estonian",
-            "nome": "Eesti keel",
+            "id": "estonian",
+            "nome": "eesti keel",
             "code": "ee"
         },
         {
-            "id": "Filipino",
+            "id": "filipino",
             "nome": "Pilipino",
             "code": "ph"
         },
         {
-            "id": "French",
+            "id": "french",
             "nome": "Français",
             "code": "fr"
         },
         {
-            "id": "German",
+            "id": "german",
             "nome": "Deutsch",
             "code": "de"
         },
         {
-            "id": "Greek",
+            "id": "greek",
             "nome": "Ελληνικά",
             "code": "gr"
         },
         {
-            "id": "Hebrew",
+            "id": "hebrew",
             "nome": "היברית",
             "code": "il"
         },
         {
-            "id": "Hungarian",
+            "id": "hungarian",
             "nome": "Magyar",
             "code": "hu"
         },
         {
-            "id": "Indonesian",
+            "id": "indonesian",
             "nome": "IndonesiaName",
             "code": "id"
         },
         {
-            "id": "Irish",
+            "id": "irish",
             "nome": "Gaeilge",
             "code": "ie"
         },
         {
-            "id": "Japanese",
+            "id": "japanese",
             "nome": "日本語",
             "code": "jp"
         },
         {
-            "id": "Kannada",
+            "id": "kannada",
             "nome": "ಕನ್ನಡ್Name",
             "code": "in"
         },
         {
-        "id": "Korean",
+        "id": "korean",
         "nome": "한어",
         "code": "kp"
         },
         {
-            "id": "Latvian",
-            "nome": "Latviešu",
+            "id": "latvian",
+            "nome": "latviešu",
             "code": "lv"
         },
         {
-            "id": "Luxembourgish",
+            "id": "luxembourgish",
             "nome": "LëtzebuergeschName",
             "code": "lu"
         },
         {
-            "id": "Macedonian",
+            "id": "macedonian",
             "nome": "Македонски",
             "code": "mk"
         },
         {
-            "id": "Nepali",
+            "id": "nepali",
             "nome": "नेपालीName",
             "code": "np"
         },
         {
-            "id": "Norwegian",
+            "id": "norwegian",
             "nome": "Norge",
             "code": "no"
         },
         {
-            "id": "Polish",
+            "id": "polish",
             "nome": "Polski",
             "code": "pl"
         },
         {
-            "id": "Portuguese",
+            "id": "portuguese",
             "nome": "Português",
             "code": "pt"
         },
         {
-            "id": "Romanian",
+            "id": "romanian",
             "nome": "Română",
             "code": "ro"
         },
         {
-            "id": "Russian",
+            "id": "russian",
             "nome": "Русский язык",
             "code": "ru"
         },
         {
-            "id": "Slovak",
+            "id": "slovak",
             "nome": "Slovenská",
             "code": "sk"
         },
         {
-            "id": "Slovene",
-            "nome": "Slovenščina",
+            "id": "slovene",
+            "nome": "slovenščina",
             "code": "si"
         },
         {
-            "id": "Somali",
+            "id": "somali",
             "nome": "Soomaali",
             "code": "so"
         },
         {
-            "id": "Spanish",
-            "nome": "Español",
+            "id": "spanish",
+            "nome": "español",
             "code": "es"
         },
         {
-        "id": "Swedish",
+        "id": "swedish",
         "nome": "Svenska",
         "code": "se"
         },
         {
-            "id": "Tatar",
+            "id": "tatar",
             "nome": "Татар",
             "code": "ru"
         },
         {
-            "id": "Turkish",
+            "id": "turkish",
             "nome": "Türkçe",
             "code": "am"
         },
         {
-            "id": "Ukrainian",
+            "id": "ukrainian",
             "nome": "УкраїнськаName",
             "code": "ua"
+        },
+        {
+            "id": "welsh",
+            "nome": "Cymraeg",
+            "code": "gb-wls"
         }
     ])
 
