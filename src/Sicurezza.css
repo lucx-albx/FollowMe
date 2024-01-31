@@ -23,14 +23,25 @@
 }
 
 .dati-partenza, .dati-arrivo{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: url("../public/Download/arrow_down.png") no-repeat;
+    background-size: 15px;
+    background-position: 99% center;
+
     background-color: #cacaca;
-    border-radius: 25px;
+    border-radius: 10px;
     border: none;
     padding: 15px!important;
-    height: 50px;
+    height: 60px;
     width: 80%;
     color: black;
-    
+}
+
+.select:focus-visible{
+    border: none!important;
+    box-shadow: none!important;
 }
 
 .btn-start{

@@ -346,10 +346,12 @@ const Impostazioni = () => {
         let flagAnimazioni = localStorage.getItem("animazioni")
         let switchAnimazioni = document.querySelector(".Animazioni")
         
-        if (flagAnimazioni === "true" || flagAnimazioni == null)
+        if (flagAnimazioni === "true"){
             switchAnimazioni.checked = true
-        else 
+        } else if(flagAnimazioni === "false" || flagAnimazioni == null) {
             switchAnimazioni.checked = false
+            localStorage.setItem("animazioni", "false")
+        }
     }
     
 
@@ -372,7 +374,7 @@ const Impostazioni = () => {
             <div className='mt-6 centra-elementi'>
                 <div className='row justify-content-center '>
                     <div className='box-elem col-11'>
-                        <CustomSwitch text={"Animazioni: "} onClick={sceltaAnimazione} className={"Animazioni"}/>
+                        <CustomSwitch text={"Animation: "} onClick={sceltaAnimazione} className={"Animazioni"}/>
                     </div>
                 </div>
 

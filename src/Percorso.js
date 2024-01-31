@@ -18,6 +18,7 @@ const Percorso = () => {
     const urlUscite = process.env.REACT_APP_URL_USCITE
     const urlIngressi = process.env.REACT_APP_URL_ENTRATE
     const urlAulaAula = process.env.REACT_APP_URL_AULE
+    const urlUsciteEmergenza = process.env.REACT_APP_URL_USCITE_EMERGENZA
 
     useEffect(() => {
         caricaPercorso()
@@ -36,6 +37,8 @@ const Percorso = () => {
             url = urlUscite
         } else if(datPart === "aula" && datArr === "aula"){
             url = urlAulaAula
+        } else if(datArr === "uscita"){
+            url = urlUsciteEmergenza
         }
 
         load.classList.remove("invisibile")

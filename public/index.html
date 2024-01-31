@@ -57,10 +57,20 @@
       // translate.execute();
       // translate.listener.start()
 
-      translate.language.setLocal('italiano');
-      translate.selectLanguageTag.show = false
-      translate.execute();
-      translate.listener.start()
+      // translate.language.setLocal('italian');
+      // translate.selectLanguageTag.show = false
+      // translate.execute();
+      // translate.listener.start()
+      
+      //Aspetta che si carica tutto il DOM
+      document.addEventListener('DOMContentLoaded', function() {
+        translate.language.setLocal('english');
+        translate.selectLanguageTag.show = false;
+        translate.changeLanguage('italian');
+        translate.execute();
+        translate.listener.start();
+      });
+
     </script>
   </body>
 </html>

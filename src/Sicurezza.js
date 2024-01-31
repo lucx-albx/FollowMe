@@ -69,21 +69,22 @@ const Sicurezza = () => {
 			altreClassi.sort()
 	  
 			//Unisco le classi numeriche e le altre classi
-			let tutteLeClassi = ["Ingresso", ...classiNumeri, ...altreClassi]
+			let tutteLeClassi = ["", "Ingresso", "Uscita", ...classiNumeri, ...altreClassi]
 	  
 			//Creo le opzioni per la select
 			tutteLeClassi.forEach((classe) => {
-				if(classe.endsWith(" i")){
-					opt += `<option class="ignore"><p >${classe.substring(0, classe.length-2)}</p></option>`
-				}else{
-					opt += `<option><p>${classe}</p></option>`
-				}
+				// if(classe.endsWith(" i")){
+				// 	opt += `<option class="ignore"><p >${classe.substring(0, classe.length-2)}</p></option>`
+				// }else{
+				// 	opt += `<option><p>${classe}</p></option>`
+				// }
+				opt += `<option><p>${classe}</p></option>`
 				
 			})
 	  
 			sel1.innerHTML = opt;
 			sel2.innerHTML = opt
-			sel2[2].selected = true
+			// sel2[2].selected = true
 			controllaParamteri()
 		  })
 	  }
@@ -127,14 +128,20 @@ const Sicurezza = () => {
 		})
 
 		//!questo test /^\d/.test(datPart) controlla se la stringa inizia per un numero
-		if(datPart === "Ingresso" && datArr === "Ingresso"){
+		if(datPart === "" || datArr === ""){
+			Toast.fire({icon: 'warning', title: 'Devi selezionare una partenza ed una destinazione valida prima di avviare la navigazione'})
+		} else if(datPart === "Uscita"){
+			Toast.fire({icon: 'warning', title: 'Mi spiace ma non puoi partire da uscita'})
+		} else if(datPart === "Ingresso" && datArr === "Ingresso"){
 			Toast.fire({icon: 'warning', title: 'Non è possibile andare da ingresso ad ingresso'})
+		} else if(datPart === "Ingresso" && datArr === "Uscita" || datPart === "Uscita" && datArr === "Ingresso"){
+			Toast.fire({icon: 'warning', title: 'Questo percorso non è valido, inseriscine una corretto'})
+		} else if(!/^\d/.test(datPart) && datPart !== "Ingresso" && datArr !== "Ingresso" && datArr !== "Uscita"){
+			if(!/^\d/.test(datPart) === !/^\d/.test(datArr)){
+				Toast.fire({icon: 'warning', title: 'Non puoi andare in due stanza uguali'})
+			}
 		} else if(/^\d/.test(datPart) && /^\d/.test(datArr)){
 			Toast.fire({icon: 'warning', title: 'Al momento non puoi andare da aula ad aula'})
-		} else if(!/^\d/.test(datPart) && datPart !== "Ingresso" && datArr !== "Ingresso"){
-			if(!/^\d/.test(datPart) === !/^\d/.test(datArr)){
-				Toast.fire({icon: 'warning', title: 'Non puoi andare in due stanza uguali oppure da segreteria/laboratorio...'})
-			}
 		} else {
 			frecciaTornaIndietro.remove("invisibile")
 			navigate("/Percorso")
