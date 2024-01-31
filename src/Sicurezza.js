@@ -34,9 +34,9 @@ const Sicurezza = () => {
 		let flagAnimazioni = localStorage.getItem("animazioni")
 		let pulseAvvia = document.querySelector(".avviaBtn")
 
-		if (flagAnimazioni === "true" || flagAnimazioni == null){
+		if (flagAnimazioni === "true"){
 			pulseAvvia.classList.add("pulse-green-avvia")
-		} else {
+		} else if(flagAnimazioni === "false" || flagAnimazioni == null) {
 			if(pulseAvvia.classList.contains("pulse-green-avvia"))
 				pulseAvvia.classList.remove("pulse-green-avvia")
 		}
