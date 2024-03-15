@@ -35,7 +35,7 @@ const Percorso = () => {
             url = urlIngressi
         } else if(datArr === "ingresso"){
             url = urlUscite
-        } else if(datPart === "aula" && datArr === "aula"){
+        } else if(datPart !== "ingresso" && datPart !== 'uscita' && datArr !== "ingresso" && datArr !== 'uscita'){
             url = urlAulaAula
         } else if(datArr === "uscita"){
             url = urlUsciteEmergenza
@@ -53,10 +53,11 @@ const Percorso = () => {
 
             data.map((elem, i)=>{
                 if(part ===  elem.partenza.toLowerCase().replace(/\s+/g, '') &&  
-                    arr ===  elem.destinazione.toLowerCase().replace(/\s+/g, ''))
+                    arr ===  elem.destinazione.toLowerCase().replace(/\s+/g, '')){
                     percorsiEsistenti = true
-                else if(percorsiEsistenti !== true)
+                } else if(percorsiEsistenti !== true){
                     percorsiEsistenti = false
+                }
             })
             
             if (percorsiEsistenti === true){
@@ -118,6 +119,7 @@ const Percorso = () => {
     const renderFreccia = () => {
         const directionClass = getDirectionClass()[0] + " RidFrec"
         const descDirection = getDirectionClass()[1]
+
         return (
             <>
                 <Freccia className={directionClass} />

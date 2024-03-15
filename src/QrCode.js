@@ -95,7 +95,7 @@ const QrCode = () => {
 
 				(	
 					<div className='col-12 styleNoQr mt-6'>
-						<img src={qrInfo} class="img-fluid imgNoQr"/>
+						<img src={qrInfo} className="img-fluid imgNoQr"/>
 						<bold className='text-center black-title-qr' style={{marginTop:'30px'}}>You have to use the scanner from a phone</bold>
 						<p className='p-uscita'>
 						We are sorry, but for logistical reasons you should use your device

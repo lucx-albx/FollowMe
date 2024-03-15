@@ -69,7 +69,7 @@ const Sicurezza = () => {
 			altreClassi.sort()
 	  
 			//Unisco le classi numeriche e le altre classi
-			let tutteLeClassi = ["", "Ingresso", "Uscita", ...classiNumeri, ...altreClassi]
+			let tutteLeClassi = ["Seleziona...", "Ingresso", "Uscita", ...classiNumeri, ...altreClassi]
 	  
 			//Creo le opzioni per la select
 			tutteLeClassi.forEach((classe) => {
@@ -128,7 +128,7 @@ const Sicurezza = () => {
 		})
 
 		//!questo test /^\d/.test(datPart) controlla se la stringa inizia per un numero
-		if(datPart === "" || datArr === ""){
+		if(datPart === "Seleziona..." || datArr === "Seleziona..."){
 			Toast.fire({icon: 'warning', title: 'Devi selezionare una partenza ed una destinazione valida prima di avviare la navigazione'})
 		} else if(datPart === "Uscita"){
 			Toast.fire({icon: 'warning', title: 'Mi spiace ma non puoi partire da uscita'})
@@ -136,23 +136,11 @@ const Sicurezza = () => {
 			Toast.fire({icon: 'warning', title: 'Non è possibile andare da ingresso ad ingresso'})
 		} else if(datPart === "Ingresso" && datArr === "Uscita" || datPart === "Uscita" && datArr === "Ingresso"){
 			Toast.fire({icon: 'warning', title: 'Questo percorso non è valido, inseriscine una corretto'})
-		} else if(!/^\d/.test(datPart) && datPart !== "Ingresso" && datArr !== "Ingresso" && datArr !== "Uscita"){
-			if(!/^\d/.test(datPart) === !/^\d/.test(datArr)){
-				Toast.fire({icon: 'warning', title: 'Non puoi andare in due stanza uguali'})
-			}
-		} else if(/^\d/.test(datPart) && /^\d/.test(datArr)){
-			Toast.fire({icon: 'warning', title: 'Al momento non puoi andare da aula ad aula'})
+		} else if(datPart === datArr){
+			Toast.fire({icon: 'warning', title: 'Non puoi andare in due stanza uguali'})
 		} else {
 			frecciaTornaIndietro.remove("invisibile")
 			navigate("/Percorso")
-
-			//!Al momento questo controllo è inutile ma servirà quando ci saranno i json da aula ad aula
-			if(/^\d/.test(datPart) && /^\d/.test(datArr)){
-				impostaVar[0].setNewVar({
-					"partenza": 'aula',
-					"arrivo": 'aula'
-				})
-			}
 		}	
 	}
 	
